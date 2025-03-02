@@ -1,0 +1,57 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environment (if using venv or virtualenv)
+venv/
+.env/
+.virtualenvs/
+
+# Jupyter Notebook checkpoints (if applicable)
+.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+
+# Logs and debugging
+*.log
+*.out
+*.err
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.manifest
+*.spec
+coverme.egg-info/
+
+# PyInstaller output
+*.spec
+dist/
+*.exe
+*.app
+*.dmg
+
+# Pipenv files (if using Pipenv)
+Pipfile
+Pipfile.lock
+
+# Poetry files
+poetry.lock
+
+# OpenAI API key (security)
+openai_api_key.txt
+
+# Setup tools
+.eggs/
+.cache/

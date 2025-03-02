@@ -36,6 +36,7 @@ his will generate a customized cover letter and save it to `output_cover_letter.
 
 ## Setup OpenAI API Key
 
+CoverMe requires an OpenAI API key to generate cover letters.
 Set the following environment variable, either in .zshrc, a .env file or in your current session as follows:
 ```
 export OPENAI_API_KEY="your-api-key-here"

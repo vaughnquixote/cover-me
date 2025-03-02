@@ -9,28 +9,33 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def extract_text_from_pdf(pdf_path):
     """Extracts text from a PDF file."""
+    print("📄 Extracting text from resume PDF...")
     try:
         with open(pdf_path, "rb") as file:
             reader = PyPDF2.PdfReader(file)
             text = "\n".join([page.extract_text() for page in reader.pages if page.extract_text()])
+        print("✅ Successfully extracted text from PDF.")
         return text
     except Exception as e:
-        print(f"Error reading PDF: {e}")
+        print(f"❌ Error reading PDF: {e}")
         return ""
 
 def read_file(file_path):
     """Reads text from a file."""
+    print(f"📖 Reading file: {file_path}...")
     try:
         with open(file_path, "r", encoding="utf-8") as file:
             return file.read()
+        print("✅ File read successfully.")
     except FileNotFoundError:
-        print(f"Error: File '{file_path}' not found.")
+        print(f"❌ Error: File '{file_path}' not found.")
         return ""
 
 def generate_cover_letter(resume_text, job_description):
     """Generates a cover letter using OpenAI API."""
+    print("📝 Generating cover letter with OpenAI...")
     if not resume_text or not job_description:
-        print("Error: Missing resume or job description text.")
+        print("❌ Error: Missing resume or job description text.")
         return ""
 
     client = openai.OpenAI()
@@ -47,7 +52,7 @@ def generate_cover_letter(resume_text, job_description):
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt}]
     )
-
+    print("✅ Cover letter successfully generated.")
     return response.choices[0].message.content
 
 def main():
